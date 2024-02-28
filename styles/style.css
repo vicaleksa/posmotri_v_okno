@@ -43,8 +43,12 @@ ol {
   display: flex;
   gap: 30px;
   align-items: flex-end;
-  justify-content: center;
   margin: auto;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
 }
 
 .result__video-container {
@@ -76,11 +80,7 @@ fieldset {
   margin-bottom: 5px;
 }
 
-.search-form__label {
-  padding: 2px;
-}
-
-.search-form__label:hover {
+.search-form__checkbox-list .search-form__label-text:hover {
   text-decoration-line: underline;
 }
 
@@ -150,7 +150,7 @@ fieldset {
 
 .button {
   border: none;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
@@ -185,7 +185,7 @@ fieldset {
 
 .more-button {
   width: calc(100% - 6px);
-  margin: 30px 3px 3px;
+  margin: 3px 3px;
 }
 
 .content__details {
@@ -213,7 +213,7 @@ fieldset {
   position: relative;
 }
 
-.content__list-item:not(:nth-last-child(2)) {
+.content__list-item:not(:last-of-type) {
   margin-bottom: 30px;
 }
 
@@ -225,6 +225,10 @@ fieldset {
 }
 
 .content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -263,11 +267,19 @@ fieldset {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
   line-height: 16.2px;
   margin-top: 6px;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .visually-hidden {
